@@ -60,7 +60,7 @@ public class UserController {
                 throw new IllegalArgumentException("Invalid email or password!");
             }
 
-            String token = tokenService.generateToken(user.getEmail());
+            String token = tokenService.generateToken(user.getEmail(), user.getRole());
 
             response.put("access_token", token);
             response.put("token_type", "Bearer");
